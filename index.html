@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Guitar Auxiliator</title>
+		<meta name="author" content="Eric Toribio">
+		<meta name="description" content="A music theory tool for guitarists">
+		<link href="https://www.w3schools.com/w3css/5/w3.css" rel="stylesheet" type="text/css" media="all">
+		<link href="index.css" rel="stylesheet">
+	</head>
+
+	<body>
+	<div class="behind">
+		<div class="banner"><center><span id="sitename">guitarauxiliator</span></center></div>
+			<div class="sidebar">
+				<ul>
+					<li id="sidebaritem">
+						Tuning:
+						<select id="tuning" onchange="sndForm()">
+							<option value="" selected disabled>Select Tuning</option>
+							<option value="tstd">Standard</option>
+							<option value="tuna">A</option>
+							<option value="tuas">A&sharp;</option>
+							<option value="tas7">A&sharp;maj7</option>
+							<option value="tfif">All Fifths (mandoguitar)</option>
+							<option value="tffa">All Fifths (mandoguitar) [alternate]</option>
+							<option value="tfrt">All Fourths</option>
+							<option value="tas2">Asus2</option>
+							<option value="tas4">Asus4</option>
+							<option value="tagf">Augmented Fourths</option>
+							<option value="tafa">Augmented Fourths [alternate]</option>
+							<option value="tunb">B</option>
+							<option value="tba4">Badd4</option>
+							<option value="tba9">Badd9</option>
+							<option value="tb9a">Badd9 [alternate]</option>
+							<option value="tblk">Balalaika</option>
+							<option value="tbfl">B&flat;</option>
+							<option value="tbpm">Bruce Palmer Modal</option>
+							<option value="tbs4">Bsus4</option>
+							<option value="tunc">C</option>
+							<option value="tucs">C&sharp;</option>
+							<option value="tcs4">C&sharp;sus4</option>
+							<option value="tuc6">C6</option>
+							<option value="tu69">C6/9</option>
+							<option value="tclo">Cello</option>
+							<option value="tctr">Cittern</option>
+							<option value="tcm4">Cm add4</option>
+							<option value="tc11">Cmaj11</option>
+							<option value="tcnv">Converge</option>
+							<option value="tcva">Converge [alternate]</option>
+							<option value="tcra">Crossnote A</option>
+							<option value="tcaa">Crossnote A [alternate]</option>
+							<option value="tca2">Crossnote A [alternate 2, Sitar A]</option>
+							<option value="tcrc">Crossnote C</option>
+							<option value="tcca">Crossnote C [alternate]</option>
+							<option value="tcc2">Crossnote C [alternate 2]</option>
+							<option value="tcrd">Crossnote D</option>
+							<option value="tcda">Crossnote D [alternate]</option>
+							<option value="tcre">Crossnote E</option>
+							<option value="tcrf">Crossnote F</option>
+							<option value="tcfa">Crossnote F [alternate]</option>
+							<option value="tcrg">Crossnote G</option>
+							<option value="tcs2">Csus2</option>
+							<option value="tcu4">Csus4</option>
+							<option value="tc49">Csus4+9</option>
+							<option value="tund">D</option>
+							<option value="tdsm">D#m add2/4</option>
+							<option value="tud6">D6</option>
+							<option value="tud7">D7</option>
+							<option value="tddd">Dad-Dad</option>
+							<option value="tud9">Dadd9</option>
+							<option value="tdgd">Dad-Gad</option>
+							<option value="tdg1">Dad-Gad [alternate]</option>
+							<option value="tdg2">Dad-Gad [alternate 2]</option>
+							<option value="tdg3">Dad-Gad [alternate 3]</option>
+							<option value="tdg4">Dad-Gad [alternate 4]</option>
+							<option value="tdg5">Dad-Gad [alternate 5]</option>
+							<option value="tdg6">Dad-Gad [alternate 6]</option>
+							<option value="tdg7">Dad-Gad [alternate 7]</option>
+							<option value="tda9">Dm add9</option>
+							<option value="tdm7">Dm7</option>
+							<option value="tdm9">Dm9</option>
+							<option value="tdj7">Dmaj7</option>
+							<option value="tdbr">Dobro</option>
+							<option value="tu2a">Double Drop A</option>
+							<option value="t2as">Double Drop A&sharp;</option>
+							<option value="tu2b">Double Drop B</option>
+							<option value="tu2c">Double Drop C</option>
+							<option value="t2cs">Double Drop C&sharp;</option>
+							<option value="tu2d">Double Drop D</option>
+							<option value="t2ds">Double Drop D&sharp;</option>
+							<option value="t2d1">Double Drop D1</option>
+							<option value="tu2e">Double Drop E</option>
+							<option value="tu2f">Double Drop F</option>
+							<option value="t2fs">Double Drop F&sharp;</option>
+							<option value="tu2g">Double Drop G</option>
+							<option value="t2gs">Double Drop G&sharp;</option>
+							<option value="tdro">Drake's Drone</option>
+							<option value="tdra">Drop A</option>
+							<option value="tand">Drop A in D Standard Variation</option>
+							<option value="tdat">Drop A in Standard Variation</option>
+							<option value="tdas">Drop A&sharp;</option>
+							<option value="tdrb">Drop B</option>
+							<option value="tdba">Drop B in Standard Variation</option>
+							<option value="tdb2">Drop B in Standard Variation [alternate]</option>
+							<option value="tdbe">Drop B-E</option>
+							<option value="tdrc">Drop C</option>
+							<option value="tdca">Drop C in Standard Variation</option>
+							<option value="tdcs">Drop C&sharp;</option>
+							<option value="trca">Drop C&sharp; in Standard Variation</option>
+							<option value="tdc1">Drop C1</option>
+							<option value="tdrd">Drop D</option>
+							<option value="tdds">Drop D&sharp;</option>
+							<option value="tdd1">Drop D1</option>
+							<option value="tdre">Drop E</option>
+							<option value="tdrf">Drop F</option>
+							<option value="tdfs">Drop F&sharp;</option>
+							<option value="tdrg">Drop G</option>
+							<option value="tgnc">Drop G in C standard variation</option>
+							<option value="tdgs">Drop G&sharp;</option>
+							<option value="tds2">Dsus2</option>
+							<option value="temd">E modal</option>
+							<option value="tema">E modal [alternate]</option>
+							<option value="te74">E7sus4</option>
+							<option value="tdhf">E&flat; (down one half-step)</option>
+							<option value="tete">El Ten Eleven</option>
+							<option value="te11">Em11</option>
+							<option value="tem7">Em7/C</option>
+							<option value="tes2">Esus2</option>
+							<option value="tes4">Esus4</option>
+							<option value="te4a">Esus4 [alternate]</option>
+							<option value="tunf">F</option>
+							<option value="tufs">F&sharp;</option>
+							<option value="tfm9">Fmaj9</option>
+							<option value="tung">G</option>
+							<option value="tugs">G&sharp;</option>
+							<option value="tug6">G6</option>
+							<option value="tug7">G7</option>
+							<option value="tga4">Gadd4</option>
+							<option value="tgm7">Gmaj7</option>
+							<option value="tgs2">Gsus2</option>
+							<option value="tgs4">Gsus4</option>
+							<option value="tg4a">Gsus4 [alternate]</option>
+							<option value="tork">Gsus4/4 (Orkney)</option>
+							<option value="tirs">Iris</option>
+							<option value="tjgz">José González</option>
+							<option value="tknv">Karnivool</option>
+							<option value="tkva">Karnivool [alternate]</option>
+							<option value="tlby">Liberty</option>
+							<option value="tlwc">Low C</option>
+							<option value="tlut">Lute</option>
+							<option value="tmj2">Major Seconds</option>
+							<option value="tm2a">Major Seconds [alternate]</option>
+							<option value="tmj3">Major Thirds</option>
+							<option value="tm3a">Major Thirds [alternate]</option>
+							<option value="tmic">Mi-composé</option>
+							<option value="tmn3">Minor Thirds</option>
+							<option value="tmrt">Mr. Tom</option>
+							<option value="tnst">New Standard</option>
+							<option value="tocv">Octave</option>
+							<option value="tupa">Open A</option>
+							<option value="tpaa">Open A [alternate]</option>
+							<option value="tpa2">Open A [alternate 2]</option>
+							<option value="tpas">Open A (Slide)</option>
+							<option value="tupb">Open B</option>
+							<option value="tpba">Open B [alternate]</option>
+							<option value="tupc">Open C</option>
+							<option value="tpca">Open C [alternate]</option>
+							<option value="tpc2">Open C [alternate 2]</option>
+							<option value="tupd">Open D</option>
+							<option value="tpda">Open D [alternate]</option>
+							<option value="tpd2">Open D [alternate 2]</option>
+							<option value="tupe">Open E</option>
+							<option value="tpea">Open E [alternate]</option>
+							<option value="tupf">Open F</option>
+							<option value="tpfa">Open F [alternate]</option>
+							<option value="tfmr">Open F (Math Rock)</option>
+							<option value="tpfs">Open F&sharp;</option>
+							<option value="tfsa">Open F&sharp; [alternate]</option>
+							<option value="tupg">Open G (Spanish Tuning/Chicago Tuning)</option>
+							<option value="tpga">Open G [alternate]</option>
+							<option value="tpsk">Open G [alternate 2, slack-key]</option>
+							<option value="tpg3">Open G [alternate 3]</option>
+							<option value="topg">Open Page</option>
+							<option value="tost">Ostrich</option>
+							<option value="tosa">Ostrich [alternate]</option>
+							<option value="tute">Sleeping Ute</option>
+							<option value="tsta">Staind</option>
+							<option value="tsal">Staind [alternate]</option>
+							<option value="tdtl">The Day I Tried to Live</option>
+						</select>
+					</li>
+					<li id="sidebaritem">
+						Chord:
+						<select id="key" onchange="sndFormChord()">
+							<option value="" selected disabled>Select Chord</option>
+							<option value="C">C</option>
+							<option value="Csharp">C#</option>
+							<option value="D">D</option>
+							<option value="Dsharp">D#</option>
+							<option value="E">E</option>
+							<option value="F">F</option>
+							<option value="Fsharp">F#</option>
+							<option value="G">G</option>
+							<option value="Gsharp">G#</option>
+							<option value="A">A</option>
+							<option value="Asharp">A#</option>
+							<option value="B">B</option>
+						</select>
+					</li>
+					<li id="sidebaritem">
+						Type:
+						<select id="chordstyle" onchange="sndFormChordType()">
+							<option value="" selected disabled>Select Type</option>
+							<option value="maj" id="chmaj">Major</option>
+							<option value="min" id="chmin">Minor</option>
+							<option value="sus2" id="chsus2">Suspended 2nd</option>
+							<option value="aug" id="chaug">Augmented</option>
+							<option value="dim" id="chdim">Diminished</option>
+							<option value="aug4" id="chaug4">Augmented 4th</option>
+							<option value="flat5" id="chflat5">Flat 5th</option>
+							<option value="maj7" id="chmaj7">Major 7th</option>
+							<option value="maj7sus4" id="chmaj7sus4">Major 7 Suspended 4</option>
+							<option value="majadd9" id="chmajadd9">Major Add 9</option>
+							<option value="majadds9" id="chmajadds9">Major Add &sharp;9</option>
+							<option value="majaddb9" id="chmajaddb9">Major Add &flat;9</option>
+							<option value="majadd11" id="chmajadd11">Major Add 11</option>
+							<option value="majadds11" id="chmajadds11">Major Add &sharp;11</option>
+							<option value="dom7" id="chdom7">Dominant 7th</option>
+							<option value="min7" id="chmin7">Minor 7th</option>
+							<option value="min7sus4" id="chmin7sus4">Minor 7 Suspended 4</option>
+							<option value="minadd9" id="chminadd9">Minor Add 9</option>
+							<option value="minadd11" id="chminadd11">Minor Add 11</option>
+							<option value="minmaj7" id="chminmaj7">Minor-Major 7th</option>
+							<option value="sus2addb13" id="chsus2addb13">Suspended 2 Add &flat;13</option>
+							<option value="augmaj7" id="chaugmaj7">Augmented Major 7th</option>
+							<option value="aug7" id="chaug7">Augmented 7th</option>
+							<option value="halfdim" id="chhalfdim">Half Diminished</option>
+							<option value="dim7" id="chdim7">Diminished 7th</option>
+							<option value="dimadd9" id="chdimadd9">Diminished Add 9</option>
+							<option value="dimaddb9" id="chdimaddb9">Diminished Add &flat;9</option>
+							<option value="aug4add7" id="chaug4add7">Augmented 4th Add 7th</option>
+							<option value="aug4addb7" id="chaug4addb7">Augmented 4th Add &flat;7th</option>
+							<option value="dom7b5" id="chdom7b5">Dominant 7th &flat;5</option>
+							<option value="b5add9" id="chb5add9">&flat;5 Add 9</option>
+							<option value="b5adds9" id="chb5adds9">&flat;5 Add &sharp;9</option>
+							<option value="maj9" id="chmaj9">Major 9</option>
+							<option value="majs9" id="chmajs9">Major &sharp;9</option>
+							<option value="maj7add11" id="chmaj7add11">Major 7 Add 11</option>
+							<option value="maj7adds11" id="chmaj7adds11">Major 7 Add &sharp;11</option>
+							<option value="maj7addb13" id="chmaj7addb13">Major 7 Add &flat;13</option>
+							<option value="maj7aug4add13" id="chmaj7aug4add13">Major 7 Augmented 4th Add 13</option>
+							<option value="majadd9add11" id="chmajadd9add11">Major Add 9 Add 11</option>
+							<option value="majaddb9add11" id="chmajaddb9add11">Major Add &flat;9 Add 11</option>
+							<option value="majadd9adds11" id="chmajadd9adds11">Major Add 9 Add &sharp;11</option>
+							<option value="majaddb9adds11" id="chmajaddb9adds11">Major Add &flat;9 Add &sharp;11</option>
+							<option value="majadds9adds11" id="chmajadds9adds11">Major Add &sharp;9 Add &sharp;11</option>
+							<option value="majadd9addb13" id="chmajadd9addb13">Major Add 9 Add &flat;13</option>
+							<option value="dom9" id="chdom9">Dominant 9</option>
+							<option value="domb9" id="chdomb9">Dominant &flat;9</option>
+							<option value="doms9" id="chdoms9">Dominant &sharp;9</option>
+							<option value="doms9b5" id="chdoms9b5">Dominant &sharp;9 &flat;5</option>
+							<option value="dom7adds11" id="chdom7adds11">Dominant 7 Add &sharp;11</option>
+							<option value="dom7add13" id="chdom7add13">Dominant 7 Add 13</option>
+							<option value="dom7addb13" id="chdom7addb13">Dominant 7 Add &flat;13</option>
+							<option value="dom9b5" id="chdom9b5">Dominant 9 &flat;5</option>
+							<option value="dom7add11" id="chdom7add11">Dominant 7 Add 11</option>
+							<option value="min7add11" id="chmin7add11">Minor 7 Add 11</option>
+							<option value="min7adds11" id="chmin7adds11">Minor 7 Add &sharp;11</option>
+							<option value="min7aug4add13" id="chmin7aug4add13">Minor 7 Augmented 4th Add 13</option>
+							<option value="min9" id="chmin9">Minor 9</option>
+							<option value="minadd9add11" id="chminadd9add11">Minor Add 9 Add 11</option>
+							<option value="minadd9adds11" id="chminadd9adds11">Minor Add 9 Add &sharp;11</option>
+							<option value="minaddb9adds11" id="chminaddb9adds11">Minor Add &flat;9 Add &sharp;11</option>
+							<option value="minmaj7add11" id="chminmaj7add11">Minor-Major 7 Add 11</option>
+							<option value="minmaj7adds11" id="chminmaj7adds11">Minor-Major 7 Add &sharp;11</option>
+							<option value="minmaj9" id="chminmaj9">Minor-Major 9</option>
+							<option value="augminmaj7add13" id="chaugminmaj7add13">Augmented Minor-Major 7 Add 13</option>
+							<option value="halfdim9" id="chhalfdim9">Half Diminished 9th</option>
+							<option value="halfdim7add11" id="chhalfdim7add11">Half Diminished 7th Add 11</option>
+							<option value="dimb9" id="chdimb9">Diminished &flat;9</option>
+							<option value="maj9b5" id="chmaj9b5">Major 9 &flat;5</option>
+							<option value="majs9addb13" id="chmajs9addb13">Major &sharp;9 Add &flat;13</option>
+							<option value="majs11s9" id="chmajs11s9">Major &sharp;11 &sharp;9</option>
+							<option value="maj11" id="chmaj11">Major 11</option>
+							<option value="majs11" id="chmajs11">Major &sharp;11</option>
+							<option value="maj9addb13" id="chmaj9addb13">Major 9 Add &flat;13</option>
+							<option value="mins11" id="chmins11">Minor &sharp;11</option>
+							<option value="min9add13" id="chmin9add13">Minor 9 Add 13</option>
+							<option value="min11" id="chmin11">Minor 11</option>
+							<option value="minb9add13" id="chminb9add13">Minor &flat;9 Add 13</option>
+							<option value="doms11b9" id="chdoms11b9">Dominant &sharp;11 &flat;9</option>
+							<option value="doms9b5add13" id="chdoms9b5add13">Dominant &sharp;9 &flat;5 Add 13</option>
+							<option value="doms11" id="chdoms11">Dominant &sharp;11</option>
+							<option value="dom9addb13" id="chdom9addb13">Dominant 9 Add &flat;13</option>
+							<option value="dom9b5addb13" id="chdom9b5addb13">Dominant 9 &flat;5 Add &flat;13</option>
+							<option value="dom11b9" id="chdom11b9">Dominant 11 &flat;9</option>
+							<option value="dom11" id="chdom11">Dominant 11</option>
+							<option value="minmaj11" id="chminmaj11">Minor-Major 11</option>
+							<option value="minmajs11" id="chminmajs11">Minor-Major &sharp;11</option>
+							<option value="augminmaj9add13" id="chaugminmaj9add13">Augmented Minor-Major 9 Add 13</option>
+							<option value="halfdim9add13" id="chhalfdim9add13">Half Diminished 9 Add 13</option>
+							<option value="halfdim11" id="chhalfdim11">Half Diminished 11</option>
+							<option value="dim11" id="chdim11">Diminished 11</option>
+						</select>
+					</li>
+					<li id="sidebaritem">
+						Scale: 
+						<select id="scalechoice" onchange="sndFormScale()">
+							<option value="" selected disabled>Select Scale</option>
+							<option value="ionian" id="scionian">Ionian / Major</option>
+						<!--<option value="lydiandom" id="sclydiandom">Lydian Dominant</option>
+							<option value="aeolian" id="scaeolian">Aeolian Mode</option>
+							<option value="algerian" id="scalgerian">Algerian</option>-->
+						</select>
+					<li id="sidebaritem">
+						<button style="padding: 5px;" onclick="sndRefresh()">refresh</button>
+					</li>
+				</ul>
+			</div>
+			<div class="container">
+			<div id="readme">
+				<p>This is a tool to automate music theory ideas for people whose brains hurt.</p><br>
+				<p>In an effort to maintain brevity and ease of reading quickly, I've written all &sharp;/&flat; notes only the &sharp; note. I know it's heresy, but it doesn't actually change anything and makes things easier.</p><br>
+				<p>You will notice a quirk with the circle of fifths info where you might see something like "D&sharp; &flat;". Until I figure out how to get around this, this just means the &sharp; and &flat; cancel each other out and you just consider it the regular chord.</p>
+			</div>
+			<div id="activechord">
+				<span id="chordselection"><br></span>
+				<table id="progressions">
+					<tr>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro1"></td>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro2"></td>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro3"></td>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro4"></td>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro5"></td>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro6"></td>
+						<td id="progressionstop" style="border-bottom: 3px solid black;"><span id="pro7"></td>
+					</tr>
+					<tr>
+						<td id="progressionsbottom"><span id="pro1b"></td>
+						<td id="progressionsbottom"><span id="pro2b"></td>
+						<td id="progressionsbottom"><span id="pro3b"></td>
+						<td id="progressionsbottom"><span id="pro4b"></td>
+						<td id="progressionsbottom"><span id="pro5b"></td>
+						<td id="progressionsbottom"><span id="pro6b"></td>
+						<td id="progressionsbottom"><span id="pro7b"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="guitar">
+				<table id="neck">
+					<tr class="fretnumbers" style="height: 10px;">
+						<th style="border: 3px solid white; background-color: black; color: white; height: 10px;">0</th>
+						<th class="fn" style="background-color: black; color: white; height: 10px;">1</th>
+						<th style="height: 10px;" id="frets">2</th>
+						<th style="height: 10px;" id="frets">3</th>
+						<th style="height: 10px;" id="frets">4</th>
+						<th style="height: 10px;" id="frets">5</th>
+						<th style="height: 10px;" id="frets">6</th>
+						<th style="height: 10px;" id="frets">7</th>
+						<th style="height: 10px;" id="frets">8</th>
+						<th style="height: 10px;" id="frets">9</th>
+						<th style="height: 10px;" id="frets">10</th>
+						<th style="height: 10px;" id="frets">11</th>
+						<th style="height: 10px;" id="frets">12</th>
+						<th style="height: 10px;" id="frets">13</th>
+						<th style="height: 10px;" id="frets">14</th>
+						<th style="height: 10px;" id="frets">15</th>
+						<th style="height: 10px;" id="frets">16</th>
+						<th style="height: 10px;" id="frets">17</th>
+						<th style="height: 10px;" id="frets">18</th>
+					</tr>
+					<tr>
+						<td class="f0"><span id="s1f0"></span></td>
+						<td class="fn"><span id="s1f1"></span></td>
+						<td class="fx"><span id="s1f2"></span></td>
+						<td class="fx"><span id="s1f3"></span></td>
+						<td class="fx"><span id="s1f4"></span></td>
+						<td class="fx"><span id="s1f5"></span></td>
+						<td class="fx"><span id="s1f6"></span></td>
+						<td class="fx"><span id="s1f7"></span></td>
+						<td class="fx"><span id="s1f8"></span></td>
+						<td class="fx"><span id="s1f9"></span></td>
+						<td class="fx"><span id="s1f10"></span></td>
+						<td class="fx"><span id="s1f11"></span></td>
+						<td class="fx"><span id="s1f12"></span></td>
+						<td class="fx"><span id="s1f13"></span></td>
+						<td class="fx"><span id="s1f14"></span></td>
+						<td class="fx"><span id="s1f15"></span></td>
+						<td class="fx"><span id="s1f16"></span></td>
+						<td class="fx"><span id="s1f17"></span></td>
+						<td class="fx"><span id="s1f18"></span></td>
+					</tr>
+					<tr>
+						<td class="f0"><span id="s2f0"></span></td>
+						<td class="fn"><span id="s2f1"></span></td>
+						<td class="fx"><span id="s2f2"></span></td>
+						<td class="fx"><span id="s2f3"></span></td>
+						<td class="fx"><span id="s2f4"></span></td>
+						<td class="fx"><span id="s2f5"></span></td>
+						<td class="fx"><span id="s2f6"></span></td>
+						<td class="fx"><span id="s2f7"></span></td>
+						<td class="fx"><span id="s2f8"></span></td>
+						<td class="fx"><span id="s2f9"></span></td>
+						<td class="fx"><span id="s2f10"></span></td>
+						<td class="fx"><span id="s2f11"></span></td>
+						<td class="fx"><span id="s2f12"></span></td>
+						<td class="fx"><span id="s2f13"></span></td>
+						<td class="fx"><span id="s2f14"></span></td>
+						<td class="fx"><span id="s2f15"></span></td>
+						<td class="fx"><span id="s2f16"></span></td>
+						<td class="fx"><span id="s2f17"></span></td>
+						<td class="fx"><span id="s2f18"></span></td>
+					</tr>
+					<tr>
+						<td class="f0"><span id="s3f0"></span></td>
+						<td class="fn"><span id="s3f1"></span></td>
+						<td class="fx"><span id="s3f2"></span></td>
+						<td class="fx"><span id="s3f3"></span></td>
+						<td class="fx"><span id="s3f4"></span></td>
+						<td class="fx"><span id="s3f5"></span></td>
+						<td class="fx"><span id="s3f6"></span></td>
+						<td class="fx"><span id="s3f7"></span></td>
+						<td class="fx"><span id="s3f8"></span></td>
+						<td class="fx"><span id="s3f9"></span></td>
+						<td class="fx"><span id="s3f10"></span></td>
+						<td class="fx"><span id="s3f11"></span></td>
+						<td class="fx"><span id="s3f12"></span></td>
+						<td class="fx"><span id="s3f13"></span></td>
+						<td class="fx"><span id="s3f14"></span></td>
+						<td class="fx"><span id="s3f15"></span></td>
+						<td class="fx"><span id="s3f16"></span></td>
+						<td class="fx"><span id="s3f17"></span></td>
+						<td class="fx"><span id="s3f18"></span></td>
+					</tr>
+					<tr>
+						<td class="f0"><span id="s4f0"></span></td>
+						<td class="fn"><span id="s4f1"></span></td>
+						<td class="fx"><span id="s4f2"></span></td>
+						<td class="fx"><span id="s4f3"></span></td>
+						<td class="fx"><span id="s4f4"></span></td>
+						<td class="fx"><span id="s4f5"></span></td>
+						<td class="fx"><span id="s4f6"></span></td>
+						<td class="fx"><span id="s4f7"></span></td>
+						<td class="fx"><span id="s4f8"></span></td>
+						<td class="fx"><span id="s4f9"></span></td>
+						<td class="fx"><span id="s4f10"></span></td>
+						<td class="fx"><span id="s4f11"></span></td>
+						<td class="fx"><span id="s4f12"></span></td>
+						<td class="fx"><span id="s4f13"></span></td>
+						<td class="fx"><span id="s4f14"></span></td>
+						<td class="fx"><span id="s4f15"></span></td>
+						<td class="fx"><span id="s4f16"></span></td>
+						<td class="fx"><span id="s4f17"></span></td>
+						<td class="fx"><span id="s4f18"></span></td>
+					</tr>
+					<tr>
+						<td class="f0"><span id="s5f0"></span></td>
+						<td class="fn"><span id="s5f1"></span></td>
+						<td class="fx"><span id="s5f2"></span></td>
+						<td class="fx"><span id="s5f3"></span></td>
+						<td class="fx"><span id="s5f4"></span></td>
+						<td class="fx"><span id="s5f5"></span></td>
+						<td class="fx"><span id="s5f6"></span></td>
+						<td class="fx"><span id="s5f7"></span></td>
+						<td class="fx"><span id="s5f8"></span></td>
+						<td class="fx"><span id="s5f9"></span></td>
+						<td class="fx"><span id="s5f10"></span></td>
+						<td class="fx"><span id="s5f11"></span></td>
+						<td class="fx"><span id="s5f12"></span></td>
+						<td class="fx"><span id="s5f13"></span></td>
+						<td class="fx"><span id="s5f14"></span></td>
+						<td class="fx"><span id="s5f15"></span></td>
+						<td class="fx"><span id="s5f16"></span></td>
+						<td class="fx"><span id="s5f17"></span></td>
+						<td class="fx"><span id="s5f18"></span></td>
+					</tr>
+					<tr>
+						<td class="f0"><span id="s6f0"></span></td>
+						<td class="fn"><span id="s6f1"></span></td>
+						<td class="fx"><span id="s6f2"></span></td>
+						<td class="fx"><span id="s6f3"></span></td>
+						<td class="fx"><span id="s6f4"></span></td>
+						<td class="fx"><span id="s6f5"></span></td>
+						<td class="fx"><span id="s6f6"></span></td>
+						<td class="fx"><span id="s6f7"></span></td>
+						<td class="fx"><span id="s6f8"></span></td>
+						<td class="fx"><span id="s6f9"></span></td>
+						<td class="fx"><span id="s6f10"></span></td>
+						<td class="fx"><span id="s6f11"></span></td>
+						<td class="fx"><span id="s6f12"></span></td>
+						<td class="fx"><span id="s6f13"></span></td>
+						<td class="fx"><span id="s6f14"></span></td>
+						<td class="fx"><span id="s6f15"></span></td>
+						<td class="fx"><span id="s6f16"></span></td>
+						<td class="fx"><span id="s6f17"></span></td>
+						<td class="fx"><span id="s6f18"></span></td>
+					</tr>
+				</table>
+			</div>
+			<div id="activechord" class="scales">
+				<span id="currentscale"></span><br>
+				Recommended chords:<br>
+				<table>
+					<tr>
+						<td id="scalestyle"><span id="scale1"></span></td>
+						<td id="scalestyle"><span id="scale2"></span></td>
+						<td id="scalestyle"><span id="scale3"></span></td>
+						<td id="scalestyle"><span id="scale4"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale5"></span></td>
+						<td id="scalestyle"><span id="scale6"></span></td>
+						<td id="scalestyle"><span id="scale7"></span></td>
+						<td id="scalestyle"><span id="scale8"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale9"></span></td>
+						<td id="scalestyle"><span id="scale10"></span></td>
+						<td id="scalestyle"><span id="scale11"></span></td>
+						<td id="scalestyle"><span id="scale12"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale13"></span></td>
+						<td id="scalestyle"><span id="scale14"></span></td>
+						<td id="scalestyle"><span id="scale15"></span></td>
+						<td id="scalestyle"><span id="scale16"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale17"></span></td>
+						<td id="scalestyle"><span id="scale18"></span></td>
+						<td id="scalestyle"><span id="scale19"></span></td>
+						<td id="scalestyle"><span id="scale20"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale21"></span></td>
+						<td id="scalestyle"><span id="scale22"></span></td>
+						<td id="scalestyle"><span id="scale23"></span></td>
+						<td id="scalestyle"><span id="scale24"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale25"></span></td>
+						<td id="scalestyle"><span id="scale26"></span></td>
+						<td id="scalestyle"><span id="scale27"></span></td>
+						<td id="scalestyle"><span id="scale28"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale29"></span></td>
+						<td id="scalestyle"><span id="scale30"></span></td>
+						<td id="scalestyle"><span id="scale31"></span></td>
+						<td id="scalestyle"><span id="scale32"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale33"></span></td>
+						<td id="scalestyle"><span id="scale34"></span></td>
+						<td id="scalestyle"><span id="scale35"></span></td>
+						<td id="scalestyle"><span id="scale36"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale37"></span></td>
+						<td id="scalestyle"><span id="scale38"></span></td>
+						<td id="scalestyle"><span id="scale39"></span></td>
+						<td id="scalestyle"><span id="scale40"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale41"></span></td>
+						<td id="scalestyle"><span id="scale42"></span></td>
+						<td id="scalestyle"><span id="scale43"></span></td>
+						<td id="scalestyle"><span id="scale44"></span></td>
+					</tr>
+					<tr>
+						<td id="scalestyle"><span id="scale45"></span></td>
+						<td id="scalestyle"><span id="scale46"></span></td>
+						<td id="scalestyle"><span id="scale47"></span></td>
+						<td id="scalestyle"><span id="scale48"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		</div>
+	</div>
+<!--		<center><div id="mainbody">
+		<div style="text-align: left;"><br></div>
+		<br>
+		<div>
+			<div style="background-color:Sienna; color:white; padding:15px; text-align: left;">Tuning:
+						<p style="padding-top: 15px; padding-bottom: 15px">Chord:
+			</p>
+			</div>
+			<br>
+			<br>
+			<center><div id="scale"></div></center>
+			<br>
+			<div class="fretboard" style="padding: 10px; border: 2px solid white; border-radius: 10px;">
+				<table class="fretboard" style="width: 800px;">
+					<tr style="background-color: black;">
+						<th style="border: 3px solid white;;">0</th>
+						<th style="border: 1px solid white; border-left: 3px solid white">1</th>
+						<th style="border: 1px solid white;">2</th>
+						
+					</tr>
+					<tr class="fretboard">
+						<td style="border: 3px solid white; background-color: Maroon;"><center><span class="fretnotes" id="s1f0"></span></td>
+						<td style="border: 1px solid white; border-left: 3px solid white;"><span class="fretnotes" id="s1f1"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f2"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f3"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f4"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f5"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f6"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f7"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f8"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f9"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f10"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f11"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f12"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f13"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f14"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f15"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f16"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f17"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s1f18"></span></td>
+					</tr>
+					<tr class="fretboard">
+						<td style="border: 3px solid white; background-color: Maroon;"><span class="fretnotes" id="s2f0"></span></td>
+						<td style="border: 1px solid white; border-left: 3px solid white"><span class="fretnotes" id="s2f1"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f2"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f3"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f4"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f5"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f6"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f7"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f8"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f9"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f10"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f11"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f12"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f13"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f14"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f15"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f16"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f17"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s2f18"></span></td>
+					</tr>
+					<tr class="fretboard">
+						<td style="border: 3px solid white; background-color: Maroon;"><span class="fretnotes" id="s3f0"></span></td>
+						<td style="border: 1px solid white; border-left: 3px solid white"><span class="fretnotes" id="s3f1"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f2"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f3"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f4"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f5"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f6"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f7"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f8"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f9"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f10"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f11"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f12"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f13"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f14"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f15"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f16"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f17"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s3f18"></span></td>
+					</tr>
+					<tr class="fretboard">
+						<td style="border: 3px solid white; background-color: Maroon;"><span class="fretnotes" id="s4f0"></span></td>
+						<td style="border: 1px solid white; border-left: 3px solid white"><span class="fretnotes" id="s4f1"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f2"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f3"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f4"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f5"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f6"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f7"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f8"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f9"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f10"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f11"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f12"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f13"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f14"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f15"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f16"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f17"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s4f18"></span></td>
+					</tr>
+					<tr class="fretboard">
+						<td style="border: 3px solid white; background-color: Maroon;"><span class="fretnotes" id="s5f0"></span></td>
+						<td style="border: 1px solid white; border-left: 3px solid white"><span class="fretnotes" id="s5f1"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f2"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f3"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f4"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f5"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f6"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f7"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f8"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f9"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f10"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f11"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f12"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f13"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f14"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f15"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f16"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f17"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s5f18"></span></td>
+					</tr>
+					<tr class="fretboard">
+						<td style="border: 3px solid white; background-color: Maroon;"><span class="fretnotes" id="s6f0"></span></td>
+						<td style="border: 1px solid white; border-left: 3px solid white"><span class="fretnotes" id="s6f1"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f2"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f3"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f4"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f5"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f6"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f7"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f8"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f9"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f10"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f11"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f12"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f13"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f14"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f15"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f16"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f17"></span></td>
+						<td style="border: 1px solid white;"><span class="fretnotes" id="s6f18"></span></center></td>
+					</tr>
+					<tr style="background-color: black;">
+						<td colspan="19">FRETBOARD</td>
+					</tr>
+				</table>
+					</div>
+					<div><br></div>
+						
+<div><span id="chordthing"></span></div>
+<br>
+<div id="circfif"></div>
+			<br> -->
+			<script type="text/javascript" src="app.js"></script>
+			<noscript>this page requires javascript</noscript>
+<!--		<div id="footer">Tuning information gathered from <a href="https://en.wikipedia.org/wiki/List_of_guitar_tunings">Wikipedia</a>.<br>
+			Chord type information gathered from the book <a href="https://musictheorysucks.com/">The Science of Music</a> by Allen Van Wert.</div>
+			</div></center> -->
+	</body>
+</html>
